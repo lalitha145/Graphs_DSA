@@ -3,16 +3,15 @@ class Solution {
         Queue<String> q=new LinkedList<>();
         HashSet<String> set=new HashSet<>(wordList);
         q.add(beginWord);
-        int steps=1;
+        int ans=1;
         while(!q.isEmpty()){
-            int size=q.size();
-             for(int k=0;k<size;k++){
-                String word=q.poll();
-                if(word.equals(endWord)) return steps;
-                if(word.equals(endWord)) return steps;
-                    for(int j=0;j<word.length();j++){
+             int size=q.size();
+              for(int k=0;k<size;k++){
+                String temp=q.poll();
+                if(temp.equals(endWord)) return ans;
+                for(int j=0;j<temp.length();j++){
                         for(char i='a';i<='z';i++){
-                         char a1[]=word.toCharArray();
+                         char a1[]=temp.toCharArray();
                          a1[j]=i;
                          String word1=new String(a1);
                          if(set.contains(word1)){
@@ -20,9 +19,9 @@ class Solution {
                             q.add(word1);
                          }
                     }
-                }
             }
-            steps++;
+             }
+            ans++;
         }
         return 0;
     }
