@@ -26,7 +26,6 @@ class Solution {
                     if(nr>=0 && nc>=0 && nr<grid.length && nc<grid[0].length && grid[nr][nc]==1){
                         grid[nr][nc]=2;
                         q.add(new int[]{nr,nc});
-                        System.out.println("I,J "+nr+"  "+nc);
                     }
                 }
             }
